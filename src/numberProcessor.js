@@ -20,20 +20,18 @@ function calculateAverage(numbers) {
   return calculateSum(numbers) / numbers.length;
 }
 
-if (require.main === module) {
-  const numberText = fs.readFileSync('./data/sample-numbers.txt', 'utf8');
+const numberText = fs.readFileSync('./data/sample-numbers.txt', 'utf8');
 
-  const numbers = numberText
-    .trim()
-    .split(/\r?\n/)
-    .map(Number);
+const numbers = numberText
+  .trim()
+  .split(/\r?\n/)
+  .map(Number);
 
-  console.log('Numbers file:');
-  console.log('Sum:', calculateSum(numbers));
-  console.log('Highest number:', findHighest(numbers));
-  console.log('Lowest number:', findLowest(numbers));
-  console.log('Average:', calculateAverage(numbers));
-}
+console.log('Numbers file:');
+console.log('Sum:', calculateSum(numbers));
+console.log('Highest number:', findHighest(numbers));
+console.log('Lowest number:', findLowest(numbers));
+console.log('Average:', calculateAverage(numbers));
 
 module.exports = {
   calculateSum,

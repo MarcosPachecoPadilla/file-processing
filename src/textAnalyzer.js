@@ -33,20 +33,18 @@ function countLines(text) {
   return text.split(/\r?\n/).length;
 }
 
-if (require.main === module) {
-  const quotesText = fs.readFileSync('./data/quotes.txt', 'utf8');
-  const sampleText = fs.readFileSync('./data/sample-text.txt', 'utf8');
+const quotesText = fs.readFileSync('./data/quotes.txt', 'utf8');
+const sampleText = fs.readFileSync('./data/sample-text.txt', 'utf8');
 
-  console.log('Quotes file:');
-  console.log('Word count:', countWords(quotesText));
-  console.log('Longest word:', findLongestWord(quotesText));
-  console.log('Line count:', countLines(quotesText));
+console.log('Quotes file:');
+console.log('Word count:', countWords(quotesText));
+console.log('Longest word:', findLongestWord(quotesText));
+console.log('Line count:', countLines(quotesText));
 
-  console.log('\nSample text file:');
-  console.log('Word count:', countWords(sampleText));
-  console.log('Longest word:', findLongestWord(sampleText));
-  console.log('Line count:', countLines(sampleText));
-}
+console.log('\nSample text file:');
+console.log('Word count:', countWords(sampleText));
+console.log('Longest word:', findLongestWord(sampleText));
+console.log('Line count:', countLines(sampleText));
 
 module.exports = {
   countWords,
